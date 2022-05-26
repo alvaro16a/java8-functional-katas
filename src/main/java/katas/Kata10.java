@@ -5,9 +5,8 @@ import com.google.common.collect.ImmutableMap;
 import model.MovieList;
 import util.DataUtil;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /*
     Goal: Create a datastructure from the given data:
@@ -55,11 +54,22 @@ public class Kata10 {
         List<Map> lists = DataUtil.getLists();
         List<Map> videos = DataUtil.getVideos();
 
-        System.out.println(lists);
-        System.out.println(videos);
 
-       
+        return lists.stream()
+                .map(list -> {
+                    Set claves = list.keySet();
+                    Collection values = list.values();
 
+                    return ImmutableMap.of("name", values, "title", values);
+                })
+                .collect(Collectors.toUnmodifiableList());
+    }
+
+        /*
+        filter(interestingMoment -> interestingMoment.getType().equals("Middle"))
+                                .map(interestingMoment -> interestingMoment.getTime())
+                                .collect(Collectors.toList())
+        */
 
         /*
         List<Movie> movies = DataUtil.getMovies();
@@ -71,16 +81,17 @@ public class Kata10 {
         return StreamUtils
                 .zip(streaMovie, streamBookMarks, (a, b) -> ImmutableMap.of("videoId", a, "bookmarkId", b) )
                 .collect(Collectors.toUnmodifiableList());
-        */
+
+
 
         return ImmutableList.of(ImmutableMap.of("name", "someName", "videos", ImmutableList.of(
                 ImmutableMap.of("id", 5, "title", "The Chamber"),
                 ImmutableMap.of("id", 3, "title", "Fracture")
         )));
-    }
+         */
 
     public static void main(String[] args) {
         Kata10 kata10 =new Kata10();
-        kata10.execute();
+        System.out.println(kata10.execute());
     }
 }
