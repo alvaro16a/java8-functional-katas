@@ -29,6 +29,5 @@ public class Kata8 {
         return StreamUtils
                 .zip(streaMovie, streamBookMarks, (a, b) -> ImmutableMap.of("videoId", a, "bookmarkId", b) )
                 .collect(Collectors.toUnmodifiableList());
-
     }
 }

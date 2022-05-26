@@ -27,10 +27,10 @@ public class Main {
         assertEquals(Kata8.execute().size(), 3);
         System.out.println("Kata 8 solved!");
 
-       /* assertEquals(Kata9.execute().size(), 4);
+        assertEquals(Kata9.execute().size(), 4);
         System.out.println("Kata 9 solved!");
 
-        assertEquals(Kata10.execute().size(), 2);
+        /*assertEquals(Kata10.execute().size(), 2);
         System.out.println("Kata 10 solved!");
 
         assertEquals(Kata11.execute().size(), 2);

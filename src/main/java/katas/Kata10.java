@@ -55,9 +55,32 @@ public class Kata10 {
         List<Map> lists = DataUtil.getLists();
         List<Map> videos = DataUtil.getVideos();
 
+        System.out.println(lists);
+        System.out.println(videos);
+
+       
+
+
+        /*
+        List<Movie> movies = DataUtil.getMovies();
+        List<Bookmark> bookMarks = DataUtil.getBookMarks();
+
+        Stream<Integer> streaMovie = movies.stream().map(movie -> movie.getId());
+        Stream<Integer> streamBookMarks = bookMarks.stream().map(bookmark -> bookmark.getId());
+
+        return StreamUtils
+                .zip(streaMovie, streamBookMarks, (a, b) -> ImmutableMap.of("videoId", a, "bookmarkId", b) )
+                .collect(Collectors.toUnmodifiableList());
+        */
+
         return ImmutableList.of(ImmutableMap.of("name", "someName", "videos", ImmutableList.of(
                 ImmutableMap.of("id", 5, "title", "The Chamber"),
                 ImmutableMap.of("id", 3, "title", "Fracture")
         )));
+    }
+
+    public static void main(String[] args) {
+        Kata10 kata10 =new Kata10();
+        kata10.execute();
     }
 }
