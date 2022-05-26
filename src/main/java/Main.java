@@ -21,10 +21,10 @@ public class Main {
        assertEquals(Kata6.execute(), "[http://cdn-0.nflximg.com/images/2891/Fracture300.jpg]");
         System.out.println("Kata 6 solved!");
 
-        /*assertEquals(Kata7.execute().size(), 4);
+        assertEquals(Kata7.execute().size(), 4);
         System.out.println("Kata 7 solved!");
 
-        assertEquals(Kata8.execute().size(), 3);
+        /*assertEquals(Kata8.execute().size(), 3);
         System.out.println("Kata 8 solved!");
 
         assertEquals(Kata9.execute().size(), 4);
